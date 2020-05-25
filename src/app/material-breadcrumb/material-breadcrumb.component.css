@@ -1,0 +1,52 @@
+div.breadcrumb-wrapper{
+    height: 25px;
+    width: 100%;
+    background-color: white;
+    border:1px solid gray;
+}
+
+ul.breadcrumb-list{
+    list-style: none;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 20px 0px 0px;
+    height: 100%;
+}
+
+ul.breadcrumb-list li{
+    font-size: 0.9em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+ul.breadcrumb-list li span,
+ul.breadcrumb-list li a{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+a.breadcrumb-item-routerlink{
+    text-decoration: none;
+    color: black;
+}
+
+a.breadcrumb-item-routerlink:hover{
+    text-decoration: underline;
+}
+
+ul.breadcrumb-list li span .mat-icon.home-icon{
+    font-size: 16px;
+    height: 16px;
+    width: 16px
+}
+
+ul.breadcrumb-list li.chev-item{
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+ul.breadcrumb-list li span .mat-icon.chev-icon{
+    color: #757575;
+}
+

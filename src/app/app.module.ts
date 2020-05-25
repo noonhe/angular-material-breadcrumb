@@ -8,6 +8,7 @@ import { MaterialBreadcrumbComponent } from './material-breadcrumb/material-brea
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [ 
     AppComponent,
@@ -15,6 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,

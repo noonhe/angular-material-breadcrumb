@@ -1,7 +1,46 @@
-<div class="breadcrumb-wrapper">
-    <ul class="breadcrumb-list">
-        <li class="breadcrumb-home-item">
-        
+<div class="breadcrumb-wrapper" Dir="rtl">
+    <ul class="breadcrumb-list" fxLayout fxLayoutAlign="start center">
+        <li *ngIf="home">
+            <a *ngIf="!home.routerLink" (click)="itemClick($event, home)" >
+                <span class="routless">
+                    <mat-icon class="home-icon">{{home.icon}}</mat-icon>
+                </span>
+            </a>
+            <a *ngIf="home.routerLink" [routerLink]="home.routerLink" [routerLinkActive]=""  class="breadcrumb-item-routerlink" (click)="itemClick($event, home)" 
+                [ngClass]="">
+                <span class="has-route">
+                    <mat-icon class="home-icon">{{home.icon}}</mat-icon>
+                </span>
+            </a>
         </li>
+        <li class="chev-item" *ngIf="model && home">
+            <span>
+                <mat-icon class="chev-icon">
+                    chevron_left
+                </mat-icon>
+            </span>
+        </li>
+        <ng-template #items ngFor let-item let-end="last" [ngForOf]="model">
+            <li>
+                <a *ngIf="!item.routerLink" (click)="itemClick($event, item)" >
+                    <span>
+                        {{item.label}}
+                    </span>
+                </a>
+                <a *ngIf="item.routerLink" [routerLink]="item.routerLink" [routerLinkActive]=""  class="breadcrumb-item-routerlink" (click)="itemClick($event, item)" 
+                    [ngClass]="">
+                    <span>
+                        {{item.label}}
+                    </span>
+                </a>
+            </li>
+            <li class="chev-item" *ngIf="!end">
+                <span>
+                    <mat-icon class="chev-icon">
+                        chevron_left
+                    </mat-icon>
+                </span>
+            </li>
+        </ng-template>
     </ul>
 </div>
